@@ -15,7 +15,6 @@ Similar to the previous problem, I selected the rows of the table that had 'team
 Out of the six rounds Team2 on their T side entered BombsiteB, they only had at least two rifles or SMGs in only three of the rounds. The average entry time of the three rounds (01:36, 01:23, 01:17) is 01:25.
 
 ### Now that we’ve gathered data on Team2 T side, let's examine their CT (counter-terrorist) Side. Using the same data set, tell our coaching staff where you suspect them to be waiting inside “BombsiteB”
-
 This time I selected the rows of the table that had 'team' = 'Team2', 'side' = 'CT', 'is_alive' = True, ‘bomb_planted’ = False, and ‘area_name’ = ‘BombsiteB’, making the assumption that in order for the CTs to wait for the Ts at a bombsite, the bomb cannot be planted. Again, I split the table by each round of the game, and each of those subtables by each player in the game. Then, I took every row’s coordinates and plotted it onto a map of de_overpass with this legend:
 
 ![image](https://github.com/chmpchmp/geniusleague/assets/108765830/8022e6bb-52d8-446e-842e-aec5bbc6049a)
@@ -25,3 +24,6 @@ The points plotted onto the minimap looks like this:
 ![image](https://github.com/chmpchmp/geniusleague/assets/108765830/958adbcb-c859-4d95-8e47-cfe9ac50b1bf)
 
 There are a few takeaways from looking at this image. Player5 (red) and Player6 (orange) are the main players who play at BombsiteB, with Player7 (green) being there too, but not as frequently. Player8 (blue) and Player9 (purple) are hardly ever seen at BombsiteB, and we can assume that these two players do not ever wait at BombsiteB. Player7 almost always waits behind the pillar in the middle of the bombsite. With Player5 and Player6, there is a relatively high chance that at least one of them will be behind the geometry at the top of the bombsite. In addition, it seems that it is very unlikely for a player to be waiting where the bomb can be planted in the red region.
+
+### Most of the time, our stakeholders (in this case, the CS:GO coaching staff) aren’t tech-savvy enough to run code themselves. Propose a solution to your product manager that could allow our coaching staff to request or acquire the output themselves and takes less than 1 weeks worth of work to implement.
+I think that a simple interface, using something like tkinter, to select certain rows or columns of the data table could be used by the CS:GO coaching staff to acquire the output themselves and could be easily implemented within a week. For an extremely simple implementation, have a textbox that enables the user to remove a column by key and have two textboxes that allows the user to select rows based on what value is in a column. Then, the user would click a button to show the final table. For a more complex implementation, show the whole table on the interface and allow the user to click columns to remove them or values in a row to select all rows with the same value.
