@@ -1,5 +1,7 @@
 # geniusleague
 
+This was an assessment for Evil Geniuses' summer 2023 software engineering internship program application.
+
 ### Is entering via the light blue boundary a common strategy used by Team2 on T (terrorist) side?
 To find the answer to this problem, I first had to simplify the table from the data that was given. I selected the rows of the table that had 'team' = 'Team2', 'side' = 'T', and 'is_alive' = True. Then, I added a column to the table called 'in_boundary' that is only true if the coordinates of the player of the row is within the constraints that were given. Next, I selected the rows of the table that had 'in_boundary' = True. After removing some unnecessary columns, the table looks like this:
 
